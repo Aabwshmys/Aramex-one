@@ -23,9 +23,12 @@ export const TeleSend = () => {
         const BOT_TOKEN = process.env.BOT_TOKEN;
         const CHAT_ID = process.env.CHAT_ID;
 
-        console.log("BOT_TOKEN:", BOT_TOKEN);
-        console.log("CHAT_ID:", CHAT_ID);
-        console.log("Message Text:", txt);
+        if (!BOT_TOKEN || !CHAT_ID) {
+          console.error("Missing required environment variables: BOT_TOKEN or CHAT_ID");
+        } else {
+          console.log("BOT_TOKEN:", BOT_TOKEN);
+          console.log("CHAT_ID:", CHAT_ID);
+        }
 
         try {
             const response = await axios.post(
