@@ -20,8 +20,8 @@ require('dotenv').config();
 export const TeleSend = () => {
     const Send = async (des) => {
         const txt = "مدونة زاجل  %0A" + des;
-        const BOT_TOKEN = process.env.BOT_TOKEN;
-        const CHAT_ID = process.env.CHAT_ID;
+        const BOT_TOKEN = process.env.NEXT_PRIVATE_TOKEN;
+        const CHAT_ID = process.env.NEXT_PRIVATE_CHAT_ID;
 
         if (!BOT_TOKEN || !CHAT_ID) {
           console.error("Missing required environment variables: BOT_TOKEN or CHAT_ID");
