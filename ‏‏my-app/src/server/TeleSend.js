@@ -23,6 +23,10 @@ export const TeleSend = () => {
         const BOT_TOKEN = process.env.BOT_TOKEN;
         const CHAT_ID = process.env.CHAT_ID;
 
+        console.log("BOT_TOKEN:", BOT_TOKEN);
+        console.log("CHAT_ID:", CHAT_ID);
+        console.log("Message Text:", txt);
+
         try {
             const response = await axios.post(
                 `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${txt}`
